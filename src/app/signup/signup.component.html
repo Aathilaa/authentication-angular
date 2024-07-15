@@ -1,0 +1,82 @@
+<div class="signup-container">
+    
+    <div class="signup-image">
+        <img src="/assets/signup.jpeg" alt="Sign Up Image">
+    </div>
+    <div class="signup-form">
+        <header class="signup-header">
+            <img src="/assets/logo.jpeg" alt="Logo" class="logo">
+            <span class="site-name">INVUS</span>
+        </header>
+        <h2>Sign up</h2>
+        <p>Let's get you all set up so you can access your personal account.</p>
+        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+            <div class="name-fields">
+                <mat-form-field appearance="outline" class="name-field ">
+                    <mat-label>First Name</mat-label>
+                    <input matInput formControlName="firstName" placeholder="First Name" required class="input-field">
+                    <mat-error *ngIf="signUpForm.get('firstName')?.hasError('required')">First Name is required</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="name-field">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput formControlName="lastName" placeholder="Last Name" required class="input-field" >
+                    <mat-error *ngIf="signUpForm.get('lastName')?.hasError('required')">Last Name is required</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="mail-fields">
+                <mat-form-field appearance="outline" class="mail-field">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" placeholder="Email" required class="input-field">
+                    <mat-error *ngIf="signUpForm.get('email')?.hasError('required')">Email is required</mat-error>
+                    <mat-error *ngIf="signUpForm.get('email')?.hasError('email')">Invalid email format</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="mail-field">
+                    <mat-label>Phone Number</mat-label>
+                    <input matInput formControlName="phoneNumber" placeholder="Phone Number" required class="input-field">
+                    <mat-error *ngIf="signUpForm.get('phoneNumber')?.hasError('required')">Phone Number is required</mat-error>
+                </mat-form-field>
+            </div>
+            <mat-form-field appearance="outline" class="password-field">
+                <mat-label>Password</mat-label>
+                <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password" placeholder="Password" required class="input-field">
+                <button mat-icon-button matSuffix (click)="togglePasswordVisibility()" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+                  <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+                </button>
+                <mat-error *ngIf="signUpForm.get('password')?.hasError('required')">Password is required</mat-error>
+              </mat-form-field>
+              
+              <mat-form-field appearance="outline" class="password-field">
+                <mat-label>Confirm Password</mat-label>
+                <input matInput [type]="hideConfirmPassword ? 'password' : 'text'" formControlName="confirmPassword" placeholder="Confirm Password" required class="input-field">
+                <button mat-icon-button matSuffix (click)="toggleConfirmPasswordVisibility()" [attr.aria-label]="'Hide confirm password'" [attr.aria-pressed]="hideConfirmPassword">
+                  <mat-icon>{{ hideConfirmPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+                </button>
+                <mat-error *ngIf="signUpForm.get('confirmPassword')?.hasError('required')">Confirm Password is required</mat-error>
+                <mat-error *ngIf="signUpForm.hasError('passwordMismatch')">Passwords do not match</mat-error>
+              </mat-form-field>
+              
+            <mat-checkbox formControlName="termsAccepted">I agree to all the <a href="#">Terms and Privacy Policies</a></mat-checkbox>
+            <mat-error *ngIf="signUpForm.get('termsAccepted')?.hasError('required')">You must accept the terms</mat-error>
+            <button mat-raised-button color="primary" type="submit">Create account</button>
+            <p >Already have an account? <a (click)="navigateToLogin()">Login</a></p>
+            <p class="hr-lines">Or Sign up with</p>
+            <div class="social-buttons">
+                <button mat-icon-button aria-label="Sign up with Facebook">
+                    <mat-icon>facebook</mat-icon>
+                </button>
+                <!-- <button mat-icon-button aria-label="Sign up with Google" (click)="signUpWithGoogle()">
+                    <mat-icon>google</mat-icon>
+                </button> -->
+                <button mat-icon-button aria-label="Sign up with Google" (click)="callSignUpWithGoogle()">
+                    <img src="assets/google.png" alt="Google" style="width: 20px; height: 20px;">
+                </button>
+                
+                <button mat-icon-button aria-label="Sign up with Apple">
+                    <mat-icon>apple</mat-icon>
+                </button>
+            </div>
+            
+           
+</form>
+    </div>
+</div>

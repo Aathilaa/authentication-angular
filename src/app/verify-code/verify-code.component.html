@@ -1,0 +1,41 @@
+<div class="login-container">
+    <div class="back-to-login">
+        <a routerLink="/login">&lt; Back to login</a>
+    </div>
+    
+    <div class="login-form">
+        
+        <header class="login-header">
+            <img src="/assets/logo.jpeg" alt="Logo" class="logo">
+            <span class="site-name">INVUS</span>
+        </header>
+        <h2>Verify Code</h2>
+        
+        <p>An authentication code has sent to your Email.</p>
+      
+        <form [formGroup]="loginForm" (ngSubmit)="onVerifyOTP()" class="pas-fields" >
+            
+            <mat-form-field appearance="outline" class="password-field">
+                <mat-label>Code</mat-label>
+                <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password" placeholder="Password" required class="input-field">
+                <button mat-icon-button matSuffix (click)="togglePasswordVisibility()" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+                  <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+                </button>
+              </mat-form-field>
+            <!-- <mat-form-field appearance="outline" class="pas-field">
+              <mat-label>Password</mat-label>
+              <input matInput type="password" formControlName="password" required  >
+            </mat-form-field> -->
+            </form>
+            
+          
+            <p >Didn't recive code? <a>Resend</a></p>
+            <button mat-raised-button color="primary" type="submit"  >Verify Code</button>
+            
+        
+    </div>
+    <div class="login-image">
+        <img src="/assets/verify-code.jpeg" alt="Log In Image">
+    </div>
+</div>
+

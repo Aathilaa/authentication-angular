@@ -1,0 +1,99 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items at the top */
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-image img {
+    width: 100%;
+    max-width: 400px; /* Adjust as necessary */
+    border-radius: 8px;
+    margin-right: 20px; /* Space between image and form */
+    margin-top: 0.5px;
+}
+
+.login-form {
+    flex: 1;
+    max-width: 400px; /* Increase width to match the image */
+    padding: 10px; /* Increase padding for better spacing */
+    background-color: #f9f9f9; /* Add a white background */
+    border-radius: 8px; /* Add border radius */
+    padding-top:70px;
+}
+
+
+
+
+
+h2 {
+    font-size: 22px; /* Slightly reduced font size */
+    margin-bottom: 8px; /* Reduced margin */
+}
+
+p {
+    color: #666;
+    margin-bottom: 8px; /* Reduced margin */
+}
+.login-header {
+    position: absolute;
+    top: 10px;
+    left: 230px;
+    display: flex;
+    align-items: center;
+}
+
+.login-header .logo {
+    height: 20px;
+    margin-right: 10px;
+}
+
+.login-header .site-name {
+    font-size: 1em;
+    font-weight: bold;
+}
+.pas-fields{
+    display: flex;
+    gap: 8px; /* Reduced space between the fields */
+    margin-bottom: 8px; /* Reduced margin below the name/mail fields */
+    
+}
+
+.pas-field {
+    flex: 1; /* Equal width for both fields */
+    
+}
+button {
+    width: 100%;
+    margin-top: 8px; /* Reduced margin */
+}
+a {
+    color: #1976d2; /* Color for links */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+    cursor: pointer;
+}
+.back-to-login {
+    position: absolute;
+    top: 60px;
+    left: 220px;
+}
+
+.back-to-login a {
+    color: #000; /* Color for the link */
+    text-decoration: none;
+    
+    font-size: 16px; /* Adjust font size if necessary */
+    white-space: nowrap; 
+}
+
+.back-to-login a:hover {
+    text-decoration: underline; /* Underline on hover */
+    cursor: pointer;
+}

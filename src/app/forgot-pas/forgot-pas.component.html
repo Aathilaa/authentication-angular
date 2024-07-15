@@ -1,0 +1,51 @@
+<div class="login-container">
+    <div class="back-to-login">
+        <a routerLink="/login">&lt; Back to login</a>
+    </div>
+    
+    <div class="login-form">
+        
+        <header class="login-header">
+            <img src="/assets/logo.jpeg" alt="Logo" class="logo">
+            <span class="site-name">INVUS</span>
+        </header>
+        <h2>Forgot Your Password?</h2>
+        
+        <p>Don't worry, happens to all of us. Enter your email below to recover your password</p>
+      <br>
+      
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="Email-fields" >
+            
+            <mat-form-field appearance="outline" class="Email-field">
+                <mat-label>Email</mat-label>
+                <input matInput  = "Email" formControlName="email" placeholder="Email" required class="input-field">
+                
+              </mat-form-field>
+            <!-- <mat-form-field appearance="outline" class="pas-field">
+              <mat-label>Password</mat-label>
+              <input matInput type="password" formControlName="password" required  >
+            </mat-form-field> -->
+            </form>
+            <button mat-raised-button color="primary" type="submit"  (click)="onLogin()" >Submit</button>
+           
+            <p class="hr-lines">Or Log In with</p>
+            <div class="social-buttons">
+                <button mat-icon-button aria-label="Sign up with Facebook">
+                    <mat-icon>facebook</mat-icon>
+                </button>
+                <!-- <button mat-icon-button aria-label="Sign up with Google" (click)="signUpWithGoogle()">
+                    <mat-icon>google</mat-icon>
+                </button> -->
+                <button mat-icon-button aria-label="Sign up with Google" >
+                    <img src="assets/google.png" alt="Google" style="width: 20px; height: 20px;">
+                </button>
+                
+                <button mat-icon-button aria-label="Sign up with Apple">
+                    <mat-icon>apple</mat-icon>
+                </button>
+            </div>
+    </div>
+    <div class="login-image">
+        <img src="/assets/forgot-pas.jpeg" alt="Log In Image">
+    </div>
+</div>

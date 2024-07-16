@@ -77,7 +77,7 @@ This project is an Angular 17 application that includes user authentication via 
   ii) Installation
 
         1.Clone the repository:
-          git clone https://github.com/your-repo/angular-authentication-project.git
+          git clone https://github.com/Aathilaa/authentication-angular.git
           cd angular-authentication-project
  
          2.Install dependencies:
